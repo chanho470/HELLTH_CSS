@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/tab.css" rel="stylesheet" />
+    <link href="./css/slid.css" rel="stylesheet" />
+    <link href="./css/calendar.css" rel="stylesheet" />
+    <link href="./css/cal.css" rel="stylesheet" />
+    <link href="./css/cal_R.css" rel="stylesheet" />
+    <link href="./css/input.css" rel="stylesheet" />
+    
+   
+    <link href='css/bootstrap.css' rel='stylesheet' />
+    <link href='css/rotating-card.css' rel='stylesheet' />
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap">
+        <span id="logo">HELLTH</span>
+    </div>
+    <div id="fullpage">
+		<div class='quick'><ul></ul></div>
+		<div class="fullsection full1" pageNum="1">
+            <div class="tabs">
+                <div class="tab-header">
+                  <div class="active">개인정보</div>
+                  <div>몸무게</div>
+                  <div>지방량</div>
+                  <div>근육량</div>
+                </div>
+                <div class="tab-indicator"></div>
+                <div class="tab-body">
+                  <div class="active">
+                    <h1>개인정보</h1>
+                    본인의 기본 신체 정보를 한눈에 볼 수 있고 수정 가능한 페이지 임
+                    본인 경험치 정보와 레밸 정보를 볼 수있다. 
+                  </div>
+        
+                  <div>
+                    <h1>몸무게</h1>
+                    <div id="graph">
+                        그래프
+                    </div>
+                    <div id="input_w">
+                        <!-- 달력 -->
+                        <div id="calendarForm"></div> 
+                        <div id="what"> 
+                            <!-- <p id="ment">당신의 변한 지방량을 입력하시오</p> -->
+                            <div id="field_input">
+                                <form id="form">
+                                    <input type="text" placeholder="Name" class="gredient_input" /><br><br>
+                                    <input type="submit" value="등록하기" class="blue_button" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>                  
+                  </div>
+        
+                  <div>
+                    <h1>지방량</h1>
+                    <div id="graph">
+                        그래프
+                    </div>
+                    <div id="input_w">
+                        <div id="calendarForm1"></div>
+                        <div id="what"> 
+                            <!-- <p id="ment">당신의 변한 지방량을 입력하시오</p> -->
+                            <div id="field_input">
+                                <form id="form">
+                                    <input type="text" placeholder="Name" class="gredient_input" /><br><br>
+                                    <input type="submit" value="등록하기" class="blue_button" />
+                                </form>
+                            </div>
+                        </div>
+                    </div> 
+                  </div>
+        
+                  <div>
+                    <h1>근육량</h1>
+                    <div id="graph">
+                        그래프
+                    </div>
+                    <div id="input_w">
+                        <div id="calendarForm2"></div>
+                        <div id="what"> 
+                            <!-- <p id="ment">당신의 변한 근육량을 입력하시오</p> -->
+                            <div id="field_input">
+                                <form id="form">
+                                    <input type="text" placeholder="Name" class="gredient_input" /><br><br>
+                                    <input type="submit" value="등록하기" class="blue_button" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                     
+                  </div>
+                </div>
+            </div>
+        </div>
+		<div class="fullsection full2" pageNum="2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card-container manual-flip">
+                                <div class="card">
+                                    <div class="front">
+                                        <div class="cover">
+                                            
+                                        </div>
+                                        <div class="user">
+                                            
+                                        </div>
+                                        <div class="content">
+                                            <div class="main">
+                                                <img src="./image/exer.png" class="hel_img"/>
+                                            </div>
+                                            <div class="footer">
+                                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                                    <i class="fa fa-mail-forward"></i> 클릭해서 뒤집기
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end front panel -->
+                                    <div class="back">
+                                        <div class="header">
+                                            <h5 class="motto">"당신의 운동 정보"</h5>
+                                        </div>
+                                        <div class="content">
+                                            <div class="main">
+                                                 <!-- 여기다 달력 한거 작성 -->
+                                                <div class="container_cal">
+                                                    <div class="my-calendar clearfix">
+                                                        <div class="clicked-date">
+                                                            <div class="cal-day"></div>
+                                                            <div class="cal-date"></div>
+                                                        </div>
+                                                        <div class="calendar-box">
+                                                            <div class="ctr-box clearfix">
+                                                                <button type="button" title="prev" class="btn-cal prev">
+                                                                </button>
+                                                                <span class="cal-month"></span>
+                                                                <span class="cal-year"></span>
+                                                                <button type="button" title="next" class="btn-cal next">
+                                                                </button>
+                                                            </div>
+                                                            <table class="cal-table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>S</th>
+                                                                        <th>M</th>
+                                                                        <th>T</th>
+                                                                        <th>W</th>
+                                                                        <th>T</th>
+                                                                        <th>F</th>
+                                                                        <th>S</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody class="cal-body"></tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <!-- // .my-calendar -->
+                                                </div>
+                                                <!-- 달력 -->
+                                                <div id="detail_exr_p">
+                                                    뭐 운동한지 나와
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <button class="btn btn-simple" rel="tooltip" title="Flip Card"
+                                                onclick="rotateCard(this)">
+                                                <i class="fa fa-reply"></i> 뒤집기
+                                            </button>
+                                        </div>
+                                    </div> <!-- end back panel -->
+                                </div> <!-- end card -->
+                            </div> <!-- end card-container -->
+                        </div> <!-- end col sm 3 -->
+                        <!--         <div class="col-sm-1"></div> -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card-container manual-flip">
+                                <div class="card">
+                                    <div class="front">
+                                        
+                                        <div class="content">
+                                            <div class="main">
+                                                <img src="./image/food1.png" class="hel_img"/>
+                                            </div>
+                                            <div class="footer">
+                                                <button class="btn btn-simple" onclick="rotateCard(this)">
+                                                    <i class="fa fa-mail-forward"></i> 클릭해서 뒤집기
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end front panel -->
+                                    <div class="back">
+                                        <div class="header">
+                                            <h5 class="motto">"당신의 식단정보"</h5>
+                                        </div>
+                                        <div class="content">
+                                            <div class="main">
+                                                <!-- 여기다 달력 한거 작성 -->
+                                                <div class="container_cal2">
+                                                    <div class="my-calendar2 clearfix2">
+                                                        <div class="clicked-date2">
+                                                            <div class="cal-day2"></div>
+                                                            <div class="cal-date2"></div>
+                                                        </div>
+                                                        <div class="calendar-box2">
+                                                            <div class="ctr-box2 clearfix2">
+                                                                <button type="button" title="prev2" class="btn-cal2 prev2">
+                                                                </button>
+                                                                <span class="cal-month2"></span>
+                                                                <span class="cal-year2"></span>
+                                                                <button type="button" title="next2" class="btn-cal2 next2">
+                                                                </button>
+                                                            </div>
+                                                            <table class="cal-table2">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>S</th>
+                                                                        <th>M</th>
+                                                                        <th>T</th>
+                                                                        <th>W</th>
+                                                                        <th>T</th>
+                                                                        <th>F</th>
+                                                                        <th>S</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody class="cal-body2"></tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <!-- // .my-calendar -->
+                                                </div>
+                                                <!-- 달력 -->
+                                                <div id="detail_food_p">
+                                                    뭐 먹은지 나와
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="footer">
+                                            <button class="btn btn-simple" rel="tooltip" title="Flip Card"
+                                                onclick="rotateCard(this)">
+                                                <i class="fa fa-reply"></i> 뒤집기
+                                            </button>
+            
+                                        </div>
+                                    </div> <!-- end back panel -->
+                                </div> <!-- end card -->
+                            </div> <!-- end card-container -->
+                        </div> <!-- end col sm 3 -->
+                        <!--         <div class="col-sm-1"></div> -->
+                    </div>
+                </div> <!-- end row --> 
+            </div>
+        </div>
+	</div>
+
+
+    <!-- 있어야 오류 안남 -->
+    <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script> 
+    <script src="./js/calender.js" type="text/javascript"></script>
+    <script src="./js/cal.js" type="text/javascript"></script>
+    <script src="./js/cal_R.js" type="text/javascript"></script>
+    <script src="./js/tab.js" type="text/javascript"></script>
+    <script src="./js/slide.js" type="text/javascript"></script>
+    <script src="./js/frontback.js" type="text/javascript"></script>
+</body>
+</html>
